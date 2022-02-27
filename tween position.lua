@@ -105,6 +105,7 @@ Content.Parent = MainFrame
 Content.Active = true
 Content.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Content.BackgroundTransparency = 1.000
+Content.AutomaticCanvasSize = Enum.AutomaticSize.Y
 Content.Position = UDim2.new(0.0697674453, 0, 0.0705394223, 0)
 Content.Size = UDim2.new(0.930232584, 0, 0.929460645, 0)
 
