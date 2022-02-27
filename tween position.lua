@@ -98,7 +98,7 @@ Pause.Parent = Controls
 Pause.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 Pause.BackgroundTransparency = 1.000
 Pause.Size = UDim2.new(0, 100, 0, 100)
-Pause.Image = "http://www.roblox.com/asset/?id=6433106861"
+Pause.Image = "http://www.roblox.com/asset/?id=6417985201"
 
 Content.Name = "Content"
 Content.Parent = MainFrame
@@ -164,9 +164,9 @@ local function list_guns()
 		end
 	end
 	
-	Bar.Visible = true
-	Bar.Size = UDim2.new(0, 0, 1, 0)
-	Bar.BackgroundTransparency = 0.8
+	Fill.Visible = true
+	Fill.Size = UDim2.new(0, 0, 1, 0)
+	Fill.BackgroundTransparency = 0.8
 	
 	for _, f in pairs(shop:GetChildren()) do
 		if f:IsA('Folder') then
@@ -174,16 +174,16 @@ local function list_guns()
 				if v:FindFirstChild('Head') then
 					create_button(v)
 					current += 1
-					Bar.Size = UDim2.new(current/found, 0, 1, 0)
+					Fill.Size = UDim2.new(current/found, 0, 1, 0)
 				end
 			end
 		end
 	end
 	
-	Bar.Size = UDim2.new(1, 0, 1, 0)
-	local a = ts:Create(Bar, TweenInfo.new(0.5), {BackgroundTransparency = 1})
+	Fill.Size = UDim2.new(1, 0, 1, 0)
+	local a = ts:Create(Fill, TweenInfo.new(0.5), {BackgroundTransparency = 1})
 	a.Completed:Connect(function()
-		Bar.Visible = false
+		Fill.Visible = false
 	end)
 end
 
