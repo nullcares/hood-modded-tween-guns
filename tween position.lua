@@ -203,3 +203,5 @@ end)
 Close.MouseButton1Click:Connect(function()
 	HoodModdedBuy:Destroy()
 end)
+
+list_guns()
