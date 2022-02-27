@@ -126,7 +126,7 @@ BuyTemplate.TextWrapped = true
 
 local function tween_to(pos)
 	local hrp = lp.Character:WaitForChild('HumanoidRootPart')
-	if hrp and con.activetween ~= nil then
+	if hrp then
 		if con.activetween ~= nil then
 			con.activetween:Cancel()
 			con.activetween = nil
@@ -149,7 +149,7 @@ local function create_button(model)
 	n.Visible = true
 	n.Parent = Content
 	n.MouseButton1Click:Connect(function()
-		tween_to(model.Head.Position)
+		tween_to(model.Head.Position + Vector3.new(0, 3, 0)) -- add offset
 	end)
 end
 
@@ -182,6 +182,7 @@ local function list_guns()
 	
 	Fill.Size = UDim2.new(1, 0, 1, 0)
 	local a = ts:Create(Fill, TweenInfo.new(0.5), {BackgroundTransparency = 1})
+	a:Play()
 	a.Completed:Connect(function()
 		Fill.Visible = false
 	end)
@@ -196,4 +197,8 @@ Pause.MouseButton1Click:Connect(function()
 		con.activetween:Cancel()
 		con.activetween = nil
 	end
+end)
+
+Close.MouseButton1Click:Connect(function()
+	HoodModdedBuy:Destroy()
 end)
